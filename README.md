@@ -22,3 +22,14 @@ The relationship between energy demand and economic activity or weather is a wel
 
 Data can be downloaded from https://drive.google.com/drive/folders/1M7UxDt49zfwLL6X9d7bsuCwWXIqW6-wD?usp=share_link.
 
+```
+* loadData: a folder with the preprocessed hourly regional electricity demand data and features.
+* Ecodata.csv: GDP, unemployment, inflation in the UK, for regions: East Midlands, West Midlands, South West, South Wales, Northern Ireland.
+* Ecodata-Ireland.csv: GDP, unemployment, inflation in the Ireland.
+* text_features.csv: daily full-text features extracted from the BBC News raw text from 2020-06-01 to 2023-06-30, including classes of: counting, word frequencies, sentiments, topics, and GloVe word embeddings.
+* hier_clusters_feat.pkl: grouped text features by hierarchical clustering
+```
+
+## Train and Evaluate models
+
+We designed four forecasting tasks of 'noText_noEco', 'noText_withEco', 'withText_noEco', 'withText_withEco' according to the participating of text or economic features. By selecting the region and specific task, the user can train and evaluate the lightGBM model. We also offer the analysis of SHAP values by plotting the beeswarm, dependency, and feature importance across all the horizons.
